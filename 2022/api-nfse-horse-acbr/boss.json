@@ -1,0 +1,15 @@
+{
+	"name": "api-nfse-horse-acbr",
+	"description": "",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "./src",
+	"projects": [],
+	"dependencies": {
+		"github.com/hashload/handle-exception": "^0.1.7",
+		"github.com/hashload/horse": "^3.0.2",
+		"github.com/hashload/horse-basic-auth": "^1.2.2",
+		"github.com/hashload/horse-logger-provider-console": "^1.0.5",
+		"github.com/hashload/jhonson": "^1.1.4"
+	}
+}
