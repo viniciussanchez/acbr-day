@@ -179,6 +179,29 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="src\controllers\Controllers.Ping.pas"/>
+        <DCCReference Include="src\controllers\Controllers.NFSe.pas"/>
+        <DCCReference Include="src\controllers\Controllers.RPS.pas"/>
+        <DCCReference Include="src\controllers\Controllers.Token.pas"/>
+        <DCCReference Include="src\providers\Providers.NFSe.pas">
+            <Form>ProviderNFSe</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\services\Services.NFSe.pas">
+            <Form>ServiceNFSe</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\services\Services.RPS.pas">
+            <Form>ServiceRPS</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\services\Services.Token.pas">
+            <Form>ServiceToken</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

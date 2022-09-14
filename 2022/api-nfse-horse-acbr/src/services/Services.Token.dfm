@@ -1,0 +1,2 @@
+inherited ServiceToken: TServiceToken
+end

@@ -1,0 +1,2 @@
+inherited ServiceNFSe: TServiceNFSe
+end
