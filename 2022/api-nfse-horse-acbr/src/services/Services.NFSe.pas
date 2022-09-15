@@ -14,9 +14,9 @@ type
     function GerarLinkNFSe(const ANumeroNFSe, ACodigoVerificacao: string): string;
     function CancelarNFSe(const AInformacoesCancelamento: TInfCancelamento): TNFSeCancelaNFSeResponse;
     function EmitirNFSe(const AQuantidade, ANumeroRPS, ANumeroLote: string): TNFSeEmiteResponse;
-    procedure ConsultarNFSeTomador;
-    procedure ConsultarNFSePrestador;
-    procedure ConsultarNFSe;
+    function ConsultarNFSeTomador(const ANumero, APagina: string): TNFSeConsultaNFSeResponse;
+    function ConsultarNFSePrestador(const ANumero, APagina: string): TNFSeConsultaNFSeResponse;
+    function ConsultarNFSe(const ANumero: string): TNFSeConsultaNFSeResponse;
     function SubstituirNFSe(const ANumeroNovoRPS, ANumeroNFSe, ANumeroLote, ASerieNFSe, ACodigoCancelamento, ACodigoVerificacao, AMotivoCancelamento: string): TNFSeSubstituiNFSeResponse;
   end;
 
@@ -35,19 +35,32 @@ begin
   end;
 end;
 
-procedure TServiceNFSe.ConsultarNFSe;
+function TServiceNFSe.ConsultarNFSe(const ANumero: string): TNFSeConsultaNFSeResponse;
 begin
-
+  if ANumero.Trim.IsEmpty then
+    raise Exception.Create('Informe o número da NFS para consultar');
+  ACBrNFSeX.ConsultarNFSeporNumero(ANumero);
+  Result := ACBrNFSeX.WebService.ConsultaNFSe;
 end;
 
-procedure TServiceNFSe.ConsultarNFSePrestador;
+function TServiceNFSe.ConsultarNFSePrestador(const ANumero, APagina: string): TNFSeConsultaNFSeResponse;
 begin
-
+  if ANumero.Trim.IsEmpty then
+    raise Exception.Create('Informe o número da NFS para consultar');
+  if APagina.Trim.IsEmpty then
+    raise Exception.Create('Informe a página');
+  ACBrNFSeX.ConsultarNFSeServicoPrestadoPorNumero(ANumero, StrToIntDef(APagina, 1));
+  Result := ACBrNFSeX.WebService.ConsultaNFSe;
 end;
 
-procedure TServiceNFSe.ConsultarNFSeTomador;
+function TServiceNFSe.ConsultarNFSeTomador(const ANumero, APagina: string): TNFSeConsultaNFSeResponse;
 begin
-
+  if ANumero.Trim.IsEmpty then
+    raise Exception.Create('Informe o número da NFS para consultar');
+  if APagina.Trim.IsEmpty then
+    raise Exception.Create('Informe a página');
+  ACBrNFSeX.ConsultarNFSeServicoTomadoPorNumero(ANumero, StrToIntDef(APagina, 1));
+  Result := ACBrNFSeX.WebService.ConsultaNFSe;
 end;
 
 function TServiceNFSe.EmitirNFSe(const AQuantidade, ANumeroRPS, ANumeroLote: string): TNFSeEmiteResponse;

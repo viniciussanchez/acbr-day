@@ -9,10 +9,13 @@ uses Horse, Services.NFSe, System.JSON, REST.Json, ACBrNFSeXWebserviceBase;
 procedure DoGetNFSeTomador(Req: THorseRequest; Res: THorseResponse);
 var
   LService: TServiceNFSe;
+  LNumeroNFSe, LPagina: string;
 begin
   LService := TServiceNFSe.Create;
   try
-
+    LNumeroNFSe := Req.Query.Field('numero').AsString;
+    LPagina := Req.Query.Field('pagina').AsString;
+    Res.Send<TJSONObject>(TJson.ObjectToJsonObject(LService.ConsultarNFSeTomador(LNumeroNFSe, LPagina)));
   finally
     LService.Free;
   end;
@@ -21,10 +24,13 @@ end;
 procedure DoGetNFSePrestador(Req: THorseRequest; Res: THorseResponse);
 var
   LService: TServiceNFSe;
+  LNumeroNFSe, LPagina: string;
 begin
   LService := TServiceNFSe.Create;
   try
-
+    LNumeroNFSe := Req.Query.Field('numero').AsString;
+    LPagina := Req.Query.Field('pagina').AsString;
+    Res.Send<TJSONObject>(TJson.ObjectToJsonObject(LService.ConsultarNFSePrestador(LNumeroNFSe, LPagina)));
   finally
     LService.Free;
   end;
@@ -32,11 +38,13 @@ end;
 
 procedure DoGetNFSe(Req: THorseRequest; Res: THorseResponse);
 var
+  LNumeroNFSe: string;
   LService: TServiceNFSe;
 begin
   LService := TServiceNFSe.Create;
   try
-
+    LNumeroNFSe := Req.Query.Field('numero').AsString;
+    Res.Send<TJSONObject>(TJson.ObjectToJsonObject(LService.ConsultarNFSe(LNumeroNFSe)));
   finally
     LService.Free;
   end;
