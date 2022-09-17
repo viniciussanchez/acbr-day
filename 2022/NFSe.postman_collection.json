@@ -1,0 +1,579 @@
+{
+	"info": {
+		"_postman_id": "e865cd93-2e89-4b80-bc97-24e31643f1c9",
+		"name": "NFSe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7298242"
+	},
+	"item": [
+		{
+			"name": "Ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}ping",
+					"host": [
+						"{{BASE_URL}}ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinicius",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}token",
+					"host": [
+						"{{BASE_URL}}token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gerar lote de RPS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinicius",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}rps/lote/gerar?lote=1&numero=10",
+					"host": [
+						"{{BASE_URL}}rps"
+					],
+					"path": [
+						"lote",
+						"gerar"
+					],
+					"query": [
+						{
+							"key": "lote",
+							"value": "1"
+						},
+						{
+							"key": "numero",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enviar lote de RPS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinicius",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}rps/lote/enviar?lote=1&numero=10",
+					"host": [
+						"{{BASE_URL}}rps"
+					],
+					"path": [
+						"lote",
+						"enviar"
+					],
+					"query": [
+						{
+							"key": "lote",
+							"value": "1"
+						},
+						{
+							"key": "numero",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Situação do lote do RPS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinicius",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}rps/lote/situacao?lote=1&protocolo=998523",
+					"host": [
+						"{{BASE_URL}}rps"
+					],
+					"path": [
+						"lote",
+						"situacao"
+					],
+					"query": [
+						{
+							"key": "lote",
+							"value": "1"
+						},
+						{
+							"key": "protocolo",
+							"value": "998523"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lote RPS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinicius",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}rps/lote?lote=1&protocolo=998523",
+					"host": [
+						"{{BASE_URL}}rps"
+					],
+					"path": [
+						"lote"
+					],
+					"query": [
+						{
+							"key": "lote",
+							"value": "1"
+						},
+						{
+							"key": "protocolo",
+							"value": "998523"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NFSe",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinicius",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}nfse?numero=151521",
+					"host": [
+						"{{BASE_URL}}nfse"
+					],
+					"query": [
+						{
+							"key": "numero",
+							"value": "151521"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gerar link da NFSe",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinicius",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}nfse/link?numero=151521&codigoVerificacao=6724726313",
+					"host": [
+						"{{BASE_URL}}nfse"
+					],
+					"path": [
+						"link"
+					],
+					"query": [
+						{
+							"key": "numero",
+							"value": "151521"
+						},
+						{
+							"key": "codigoVerificacao",
+							"value": "6724726313"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar NFSe tomador",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinicius",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}nfse/tomador?numero=151521&pagina=2",
+					"host": [
+						"{{BASE_URL}}nfse"
+					],
+					"path": [
+						"tomador"
+					],
+					"query": [
+						{
+							"key": "numero",
+							"value": "151521"
+						},
+						{
+							"key": "pagina",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar NFSe prestador",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinicius",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}nfse/prestador?numero=151521&pagina=2",
+					"host": [
+						"{{BASE_URL}}nfse"
+					],
+					"path": [
+						"prestador"
+					],
+					"query": [
+						{
+							"key": "numero",
+							"value": "151521"
+						},
+						{
+							"key": "pagina",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancelar NFSe",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinicius",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}nfse/cancelar",
+					"host": [
+						"{{BASE_URL}}nfse"
+					],
+					"path": [
+						"cancelar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Substituir NFSe",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinicius",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}nfse/substituir?rps=1&nfse=2&lote=3&serie=4&codigoCancelamento=5&motivo=Teste&codigoVerificacao=6",
+					"host": [
+						"{{BASE_URL}}nfse"
+					],
+					"path": [
+						"substituir"
+					],
+					"query": [
+						{
+							"key": "rps",
+							"value": "1"
+						},
+						{
+							"key": "nfse",
+							"value": "2"
+						},
+						{
+							"key": "lote",
+							"value": "3"
+						},
+						{
+							"key": "serie",
+							"value": "4"
+						},
+						{
+							"key": "codigoCancelamento",
+							"value": "5"
+						},
+						{
+							"key": "motivo",
+							"value": "Teste"
+						},
+						{
+							"key": "codigoVerificacao",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Emitir NFSe",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "vinicius",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}nfse/emitir?quantidade=10&rps=1&lote=2",
+					"host": [
+						"{{BASE_URL}}nfse"
+					],
+					"path": [
+						"emitir"
+					],
+					"query": [
+						{
+							"key": "quantidade",
+							"value": "10"
+						},
+						{
+							"key": "rps",
+							"value": "1"
+						},
+						{
+							"key": "lote",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:9000/",
+			"type": "string"
+		}
+	]
+}
