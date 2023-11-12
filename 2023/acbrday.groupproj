@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{561EEC0C-623D-4F69-9415-4991C3E27811}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="jwt\security.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="fiscal\fiscal.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="customers\customers.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="security">
+        <MSBuild Projects="jwt\security.dproj"/>
+    </Target>
+    <Target Name="security:Clean">
+        <MSBuild Projects="jwt\security.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="security:Make">
+        <MSBuild Projects="jwt\security.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="fiscal">
+        <MSBuild Projects="fiscal\fiscal.dproj"/>
+    </Target>
+    <Target Name="fiscal:Clean">
+        <MSBuild Projects="fiscal\fiscal.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="fiscal:Make">
+        <MSBuild Projects="fiscal\fiscal.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="customers">
+        <MSBuild Projects="customers\customers.dproj"/>
+    </Target>
+    <Target Name="customers:Clean">
+        <MSBuild Projects="customers\customers.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="customers:Make">
+        <MSBuild Projects="customers\customers.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="security;fiscal;customers"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="security:Clean;fiscal:Clean;customers:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="security:Make;fiscal:Make;customers:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,14 @@
+{
+	"name": "api",
+	"description": "",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "./src",
+	"projects": [],
+	"dependencies": {
+		"github.com/hashload/handle-exception": "^0.1.8",
+		"github.com/hashload/horse": "^3.1.5",
+		"github.com/hashload/horse-jwt": "^2.0.14",
+		"github.com/hashload/jhonson": "^1.1.6"
+	}
+}

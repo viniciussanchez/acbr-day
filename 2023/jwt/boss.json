@@ -1,0 +1,14 @@
+{
+	"name": "jwt",
+	"description": "",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "./src",
+	"projects": [],
+	"dependencies": {
+		"github.com/hashload/handle-exception": "^0.1.8",
+		"github.com/hashload/horse": "^3.1.5",
+		"github.com/hashload/jhonson": "^1.1.6",
+		"github.com/paolo-rossi/delphi-jose-jwt": "^v3.2.0"
+	}
+}
